@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Shop</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700,display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="/static/assets/css/all.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.min.css">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="/static/assets/css/owl.carousel.css">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="/static/assets/css/magnific-popup.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="/static/assets/css/animate.css">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="/static/assets/css/meanmenu.min.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="/static/assets/css/main.css">
+	<!-- responsive -->
+	<link rel="stylesheet" href="/static/assets/css/responsive.css">
+	<link rel="stylesheet" href="static/css/admin.css">
+	<link rel="stylesheet" href="static/css/style.css">
+	<link rel="stylesheet" href="static/css/shop.css">
+
+
+</head>
+<body>
+	
+	<!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+	
+	
+						<!-- logo -->
+<!-- header starts -->
+<!-- header section starts  -->
+
+<header class="header">
+
+	<a href="#" class="logo"> <i class="fas fa-shopping-basket"></i> VAAJ </a>
+  
+	<nav class="navbar">
+	  <a href="\index3">Home</a>
+  
+	  <a href="\shop">Products</a>
+	  <a href="\orders">Orders</a>
+	  <a href="\about3">About</a>
+	  <a href="\logout">Logout</a>
+		
+		
+		
+	   
+		
+	</nav>
+  
+	<div class="icons">
+
+		<a href="\cart"> <div class="fas fa-shopping-cart" id="cart-btn"></div></a>
+	   
+		
+	</div>
+  
+	
+  
+   
+  </header>
+  
+  <!-- header section ends -->
+<!-- header ends -->
+	<!-- search area -->
+	<div class="search-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<span class="close-btn"><i class="fas fa-window-close"></i></span>
+					<div class="search-bar">
+						<div class="search-bar-tablecell">
+							<h3>Search For:</h3>
+							<input type="text" placeholder="Keywords">
+							<button type="submit">Search <i class="fas fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end search arewa -->
+	
+ -->
+
+	<!-- products -->
+	
+	
+        <!-- products section starts  -->
+
+<section class="products" id="products">
+    
+ 
+    <h1 class="heading" style="margin-top: 40px;"> our <span>products</span> </h1>
+	<center>	<a href="\shop" class="btn">All</a> <a href="\veg" class="btn">Vegetables</a>   <a href="\fru" class="btn">Fruits</a></center>
+    <div class="row" style="margin-top: 40px;">
+    {% for p in products %}
+    <div class="col-md-3">
+    <div class="swiper product-slider" >
+
+      
+
+            <div class="swiper-slide box">
+			<form method="POST" action="/add">
+                <img src="/static/Uploads/{{p[6]}}" alt="">
+                <h3>{{p[1]}}</h3>
+				<input type="hidden" name="itemid" value="{{p[0]}}"/>
+                <div class="price"> ₹{{p[3]}} </div>
+				<h4><input type="number" class="" name="quantity" value="1" size="2" /><br><br></h4> 
+                
+                <input type="submit" value="Add to Cart" class="fas fa-shopping-cart" />
+			</form>
+            </div>
+                </div>
+               
+        
+               
+            </div>
+            {% endfor %}
+        </div>
+   
+
+</section>
+
+<!-- products section ends -->
+	
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<div class="pagination-wrap">
+						<!-- <ul>
+							<li><a href="#">Prev</a></li>
+							<li><a href="#">1</a></li>
+							<li><a class="active" href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">Next</a></li>
+						</ul> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end products -->
+
+
+	<!-- footer section starts  -->
+
+
+	<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3> VAAJ <i class="fas fa-shopping-basket"></i> </h3>
+            
+            <div class="share">
+				<a href="https://instagram.com/cyber_gpsy_?igshid=YTQwZjQ0NmI0OA==" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> 8769696978 </a>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> 9876345453 </a>
+            <a href="#" class="links"> <i class="fas fa-envelope"></i> vaaj@gmail.com </a>
+            <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Meelor,kerala,india  </a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="\index3" class="links"> <i class="fas fa-arrow-right"></i> Home </a>
+            <a href="\shop" class="links"> <i class="fas fa-arrow-right"></i> Products </a>
+            <a href="#categories" class="links"> <i class="fas fa-arrow-right"></i> Categories </a>
+          
+        </div>
+
+        
+
+    </div>
+
+ 
+
+</section>
+<!-- footer section ends -->
+	
+	
+	
+	<!-- jquery -->
+	<script src="/static/assets/js/jquery-1.11.3.min.js"></script>
+	<!-- bootstrap -->
+	<script src="/static/assets/bootstrap/js/bootstrap.min.js"></script>
+	<!-- count down -->
+	<script src="/static/assets/js/jquery.countdown.js"></script>
+	<!-- isotope -->
+	<script src="/static/assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<!-- waypoints -->
+	<script src="/static/assets/js/waypoints.js"></script>
+	<!-- owl carousel -->
+	<script src="/static/assets/js/owl.carousel.min.js"></script>
+	<!-- magnific popup -->
+	<script src="/static/assets/js/jquery.magnific-popup.min.js"></script>
+	<!-- mean menu -->
+	<script src="/static/assets/js/jquery.meanmenu.min.js"></script>
+	<!-- sticker js -->
+	<script src="/static/assets/js/sticker.js"></script>
+	<!-- main js -->
+	<script src="/static/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+
+   
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    
+<style>
+  
+ 
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+ 
+
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-top: -80px;
+
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+/* start */
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 180%;
+  overflow: auto;
+  margin-bottom: 50px;
+  margin-top: -150px;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+li a.active1 {
+    background-color: #A6BD22;
+    color: white;
+  }
+  
+
+
+</style>
+</head>
+<body>
+    <!-- header section starts  -->
+
+<header class="header">
+
+    <a href="\index2" class="logo"> <i class="fas fa-shopping-basket"></i> VAAJ </a>
+    <nav class="navbar">
+      <a href="/logoutadmin">Logout</a>
+    </nav>
+    <div class="headlogo">
+    <h1><span>GO</span> ORGANIC</h1>
+   </div>
+
+    
+
+
+</header>
+<!-- home section starts  -->
+<home>
+<section class="home" id="home">
+
+    <div class="content">
+        <h3><u><span>Welcome</span> To Admin Panel</u></h3>
+        
+        
+    </div>
+
+</section>
+</home>
+<!-- home section ends -->
+<!--menu starts here-->
+
+<ul>
+    <li><a class="active1" href="#" >Registration</a></li>
+  <li><a  href="/category" >Add Category</a></li>
+  <li><a  href="/add" >Add Product</a></li>
+  <li><a   href="/supplier">Supplier</a></li>
+  <li><a class="active1" href="#" >View</a></li>
+  <li><a href="/Stockdetails">Product Details</a></li>
+  <li><a href="/Viewsup">Supplier Details</a></li>
+  <li><a class="active1" href="#" >Userside</a></li>
+  <li><a  href="/orders">Orders</a></li>
+  <li><a  href="/shipping">Shipping</a></li>
+</ul>
+
+<div class="textc" style="margin-left:25%;padding:1px 16px;height:1000px;">
+
+  
+</div>
+<--menu ends here-->
+
+
+</body>
+</html>

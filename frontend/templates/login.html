@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+<!-- custom css -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stylelogin.css') }}">
+</head>
+<body>
+	<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-shopping-basket"></i> VAAJ </a>
+
+    <nav class="navbar">
+        <a href="\">Home</a>
+        <a href="\shop">Products</a>
+        <a href="\login">Login</a>
+        <a href="\signin">Sign Up</a>
+        
+       
+        
+    </nav>
+
+   
+
+  
+   
+</header>
+
+<!-- header section ends -->
+	<center><h1><b>LOGIN</b></h1></center>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left" style="background-image: url({{ url_for('static',filename = '/image/bg2.jpg')}});">
+		<div class="overlay">
+		<h1>LOGIN</h1>
+		<p></p>
+		
+		</div>
+	</div>
+	
+	
+	<div class="right">
+		<form action="{{ url_for('login') }}" method="post">
+			{% if message is defined and message %}
+			<div class="alert alert-warning">{{ message }}</div>
+		{% endif %}
+		<div><label for="Username">Username</label></div>
+			<div class="form-field">
+				<input type="username" class="form-control" id="username" name="username" placeholder="Enter Username/email" name="username">
+			</div>
+			<div><label for="password">Password</label></div>
+			<div class="form-field">
+				<input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd">
+			</div>
+			
+			<div class="form-field">
+			  <button class="btn" type="submit">Log in</button>
+			 
+			</div>
+		  
+			<p class="bottom">Dont't have an account?  <a class="bottom" href="{{url_for('signin')}}"> Register here</a></p>
+			  
+		   
+		  </form>
+			
+			<br><br>
+			
+		
+			
+	</div>
+
+	
+</div>
+<!-- partial -->
+  
+</body>
+</html>

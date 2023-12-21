@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAAJ</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="static/assets/css/all.min.css">
+    	<!-- bootstrap -->
+	<link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style1.css">
+    
+    
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-shopping-basket"></i> VAAJ </a>
+
+    <nav class="navbar">
+        <a href="#home">Home</a>
+
+        <a href="\shop">Products</a>
+        <a href="\orders">Orders</a>
+        <a href="\about3">About</a>
+        <a href="\logout">Logout</a>
+        
+    </nav>
+
+    <div class="icons">
+       
+       <a href="\cart"> <div class="fas fa-shopping-cart" id="cart-btn"></div></a>
+        
+    </div>
+
+   
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+   <div class="content">
+        <h3><span style="color: rgb(6, 247, 6); font-size: larger">GO</span> Organic</h3>
+       <b> <p style="color: black; font-size: large; ">Did you ever imagine that the freshest of fruits and vegetables, top quality pulses and food grains, dairy products and hundreds of branded items could be handpicked and delivered to your home, all at the click of a button? India’s first comprehensive online megastore, <b>VAAJ</b>, brings a whopping 20000+ products with more than 1000 brands, to over 4 million happy customers.  <b>VAAJ</b> has everything you need for your daily needs..</p></b>
+        <a href="\shop" class="btn">Shop Now</a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+
+<!-- features section starts  -->
+
+<section class="features" id="features">
+
+    <h1 class="heading"> Our <span>Features</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="/static/image/feature-img-1.png" alt="">
+            <h3>Fresh and Organic</h3>
+           
+            
+        </div>
+
+        <div class="box">
+            <img src="/static/image/feature-img-2.png" alt="">
+            <h3>Free Delivery</h3>
+            
+            
+        </div>
+
+        <div class="box">
+            <img src="/static/image/feature-img-3.png" alt="">
+            <h3>Easy Payments</h3>
+           
+            
+        </div>
+
+    </div>
+
+</section>
+
+<!-- features section ends -->
+
+<!-- products section starts  -->
+
+<section class="products" id="products">
+    
+ 
+    <h1 class="heading"> Our <span>Products</span> </h1>
+    <div class="row">
+    {% for p in products %}
+    <div class="col-md-3">
+    <div class="swiper product-slider" >
+
+      
+
+            <div class="swiper-slide box">
+                <img src="/static/Uploads/{{p[6]}}" alt="">
+                <h3>{{p[1]}}</h3>
+                <div class="price"> ₹{{p[3]}} </div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <a href="/shop" class="btn">Shop Now</a>
+            </div>
+                </div>
+               
+        
+               
+            </div>
+            {% endfor %}
+        </div>
+   
+
+</section>
+
+<!-- products section ends -->
+
+<!-- categories section starts  -->
+
+<section class="categories" id="categories">
+
+    <h1 class="heading"> Product <span>Categories</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="/static/image/cat-1.png" alt="">
+            <h3>Vegetables</h3>
+            <p>upto 45% off</p>
+            <a href="\veg" class="btn">Shop Now</a>
+        </div>
+
+        <div class="box">
+            <img src="/static/image/cat-2.png" alt="">
+            <h3>Fresh fruits</h3>
+            <p>upto 45% off</p>
+            <a href="\fru" class="btn">Shop Now</a>
+        </div>
+
+       
+
+    </div>
+
+</section>
+
+<!-- categories section ends -->
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3> VAAJ <i class="fas fa-shopping-basket"></i> </h3>
+            
+            <div class="share">
+                <a href="https://instagram.com/cyber_gpsy_?igshid=YTQwZjQ0NmI0OA==" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> 8769696978 </a>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> 9876345453 </a>
+            <a href="#" class="links"> <i class="fas fa-envelope"></i> vaaj@gmail.com </a>
+            <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Meelor, Kerala, India  </a>
+        </div>
+
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="\index3" class="links"> <i class="fas fa-arrow-right"></i> Home </a>
+            <a href="\shop" class="links"> <i class="fas fa-arrow-right"></i> Products </a>
+            <a href="#categories" class="links"> <i class="fas fa-arrow-right"></i> Categories </a>
+          
+        </div>
+
+        
+
+    </div>
+
+ 
+
+</section>
+</body>
+</html>
+
+<!-- footer section ends -->
+
+

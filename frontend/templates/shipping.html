@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh"content="30">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="{{url_for('static', filename = '/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- custom css file link  -->
+   
+   
+<style>
+  /* start of stock detail css */
+  table.tg {
+    width: 100%;
+    text-align: center;
+    margin-top: -60px;
+    
+  }
+  
+  .tg  {border-collapse:collapse;border-color:#bbb;border-spacing:0;}
+.tg td{background-color:#E0FFEB;border-color:#bbb;border-style:solid;border-width:0px;color:#594F4F;
+  font-family:Arial, sans-serif;font-size:14px;overflow:auto;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#9DE0AD;border-color:#bbb;border-style:solid;border-width:0px;color:#493F3F;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:auto;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-dvpl{border-color:inherit;text-align:center;vertical-align:top}
+/* end */
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 180%;
+  overflow: auto;
+  margin-bottom: 50px;
+  margin-top: -150px;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+li a.active1 {
+    background-color: #A6BD22;
+    color: white;
+  }
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* start */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#ff7800;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 90%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body{
+    background:#eee;
+}
+
+
+
+section{
+    padding:2rem 9%;
+}
+
+
+.heading{
+    text-align: center;
+    padding:2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color:var(--black);
+}
+
+.heading span{
+    background: var(--orange);
+    color:#fff;
+    display: inline-block;
+    padding:.5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:#fff;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:var(--black);
+}
+
+.header .logo i{
+    color:var(--orange);
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:var(--black);
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../image/banner-bg.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+}
+
+.home .content{
+    text-align: center;
+    width:60rem;
+    margin-right: -380px;
+}
+
+.home .content h3{
+    color:var(--black);
+    font-size: 3rem;
+   
+    padding: 5px;
+   text-align: center;
+}
+
+.home .content h3 span{
+    color:green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .search-form{
+        width:90%;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #fff;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .heading{
+        font-size: 2.5rem;
+    }
+
+    .footer{
+        text-align: center;
+    }
+
+    .footer .box-container .box .payment-img{
+        margin: 2rem auto;
+    }
+
+}
+
+/* end */
+
+</style>
+
+</head>
+<body>
+    <!-- header section starts  -->
+
+<header class="header">
+
+    <a href="D:\project aljo\main project\index2.html" class="logo"> <i class="fas fa-shopping-basket"></i> VAAJ </a>
+    <nav class="navbar">
+      <a href="/logoutadmin">Logout</a>
+    </nav>
+    <div class="headlogo">
+    <h1><span>GO</span> ORGANIC</h1>
+   </div>
+
+    
+
+
+</header>
+<!-- home section starts  -->
+
+<section class="home" id="home">
+    
+    <div class="content">
+       <h3><span>Shipping</span> Details</h3>
+       
+    </div>
+   
+</section>
+
+<!--menu starts here-->
+<ul>
+    <li><a class="active1" href="#" >Registration</a></li>
+    <li><a  href="/category" >Add Category</a></li>
+    <li><a  href="/add" >Add Product</a></li>
+    <li><a   href="/supplier">Supplier</a></li>
+    <li><a class="active1" href="#" >View</a></li>
+    <li><a href="/Stockdetails">Product Details</a></li>
+    <li><a href="/Viewsup">Supplier Details</a></li>
+    <li><a class="active1" href="#" >Userside</a></li>
+    <li><a  href="/orders">Orders</a></li>
+    <li><a class="active" href="/shipping">Shipping</a></li>
+</ul>
+
+<div class="textc" style="margin-left:25%;padding:1px 16px;height:1000px;">
+  
+
+  <div class="container">
+
+    <div class="row">
+
+        <div class="col md-12" >
+
+
+
+        
+
+
+
+    {%with messages = get_flashed_messages()%}
+
+    {%if messages%}
+
+    {% for message in messages %}
+
+    <div class="alert alert-success alert-dismissable" role="alert">
+
+     <button type="button" class="close" data-dismiss="alert" aria-label ="close">
+
+         <span aria-hidden="true">&times;</span>
+
+     </button>
+        {{message}}
+
+
+    </div>
+
+
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+
+
+
+
+            <table class="table table-striped" style="margin-top: 40px;">
+
+
+                <tr>
+                    <th>Order id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone no.</th>
+                    <th>Address</th>
+                    <th>State</th>
+                    <th>District</th>
+                    <th>Zip</th>
+      
+
+
+          </tr>
+
+            {% for i in shp %}
+                <tr>
+                    <td>{{i[7]}}</td>
+                    <td>{{i[0]}}</td>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+                    <td>{{i[3]}}</td>
+                    <td>{{i[4]}}</td>
+                    <td>{{i[4]}}</td>
+                    <td>{{i[6]}}</td>
+                    
+                    
+                  
+                </tr>
+            
+
+   
+
+
+                {% endfor  %}
+
+
+              
+
+
+            </table>
+
+
+        </div>
+
+
+
+
+
+
+
+ 
+  
+
+
+</body>
+</html>

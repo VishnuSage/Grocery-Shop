@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>signup</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!--custom css  -->
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stylelogin.css') }}">
+
+</head>
+<body>
+	<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-shopping-basket"></i> VAAJ </a>
+
+    <nav class="navbar">
+        <a href="\">Home</a>
+        <a href="\shop">Products</a>
+        <a href="\login">Login</a>
+        <a href="\signin">Sign Up</a>
+        
+       
+        
+    </nav>
+
+   
+
+  
+   
+</header>
+
+<!-- header section ends -->
+	<center><h1><b>SIGN UP</b></h1></center>
+<!-- partial:index.partial.html -->
+<div class="box-form">
+	<div class="left" style="background-image: url({{ url_for('static',filename = '/image/bg.jpg')}});">
+		
+		<div class="overlay">
+		<h1>SIGN UP</h1>
+		<p></p>
+		
+		</div>
+	</div>
+	
+	
+	<div class="right">
+		<form  action="{{ url_for('userdetails') }}" method="post">
+			{% if mesage is defined and mesage %}
+			<div class="alert alert-warning">{{ mesage }}</div>
+		{% endif %}
+			
+		<div><label for="name">Name</label></div>	
+		    <div class="form-field">
+            
+            
+				
+				<input type="name" class="form-control" id="name" name="name" placeholder="Enter name" name="name">
+			</div>    
+			   <div><label for="address">address</label></div>
+                    <div class="form-field">
+						
+						<input type="address" class="form-control" id="address" name="address" placeholder="Enter address" name="address">
+					</div>
+					<div>
+						<label for="phone">phone no</label>
+					</div>
+					<div class="form-field">
+						
+						
+						<input type="phone" class="form-control" id="phone" name="phone" placeholder="phone no" name="phone">
+					</div>
+                    <div>
+						<label for="pin">Pincode</label>
+					</div>
+					<div class="form-field">
+						<input type="pin" class="form-control" id="pin" name="pin" placeholder="pin" name="pin">
+					</div>
+                    <div>
+						<label for="state">State</label>
+					</div>
+					<div class="form-field">
+						<input type="state" class="form-control" id="state" name="state" placeholder="State" name="state">
+					</div>
+                    <div>
+						<label for="district">District</label>
+					</div>
+					<div class="form-field">
+						<input type="district" class="form-control" id="district" name="district" placeholder="District" name="district">
+					</div>
+					
+							
+						   
+						  
+				
+
+
+
+
+
+			<div class="form-field">
+			  <button class="btn" type="submit">Sign Up</button>
+			  
+			</div>
+		  
+			<p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Login here</a></p>
+			  
+		   
+		  </form>
+			
+			<br><br>
+			
+		
+			
+	</div>
+
+	
+</div>
+<!-- partial -->
+  
+</body>
+</html>

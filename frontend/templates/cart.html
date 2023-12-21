@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+  
+  <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+  <script src="static/assets/bootstrap/js/jquery-3.2.1.slim.min.js" ></script>
+  <script src="static/assets/bootstrap/js/popper.min.js" ></script>
+  <script src="static/assets/bootstrap/js/bootstrap.min.js" ></script>
+  <link rel="stylesheet" href="static/assets/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/admin.css">
+  
+    
+</head>
+<body>
+  <!-- header section starts  -->
+
+<header class="header">
+
+  <a href="#" class="logo"> <i class="fas fa-shopping-basket"></i> VAAJ </a>
+
+  <nav class="navbar">
+    <a href="\index3">Home</a>
+
+    <a href="\shop">Products</a>
+    <a href="\orders">Orders</a>
+    <a href="\about3">About</a>
+    <a href="\logout">Logout</a>
+      
+      
+      
+     
+      
+  </nav>
+
+  <div class="icons">
+     
+     
+      
+  </div>
+
+  
+
+ 
+</header>
+
+<!-- header section ends -->
+  <div class="container" style="margin-top: 190px; max-width: 1500px;max-height: 3000px;">
+    <h1 class="text-center">Cart</h1>
+    {% if items %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+          <tr>
+             <td> <img src="/static/uploads/{{ item.image }}" class="img-thumbnail" width="50" height="50"/></td>
+             <td>{{ item.iname}}</td>
+            <td>
+               <form action="{{ url_for('update_quantity', itemid=item.itemid) }}" method="post">
+              <input type="number" name="quantity" value="{{ item.quantity }}">
+              <input type="submit" class="btn btn-info" value="Update">
+            </form>
+          </td>
+            <td>₹{{ item.price }}</td>
+            <td>₹{{ item.quantity * item.price }}</td>
+            <td><a href="{{ url_for('delete_product', itemid=item.itemid) }}" class="btn btn-danger">Delete</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Total Quantity: {{ total_quantity }}</p>
+      </div>
+      <div class="col-md-5 text-right">
+        <p>Total Price: ${{ total_price }}</p>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="{{ url_for('empty_cart') }}" class="btn btn-danger">Empty Cart</a>
+    </div>
+    <div style="position:relative; left:-10px; top: -40px;">
+      <a href="/shop" class="btn btn-primary">Continue Shopping</a>
+    </div>
+    <div style="position:relative; left: 1230px; top: -80px;">
+      <a href="/checkout" class="btn btn-success">Buy</a>
+    {% else %}
+    <p class="text-center">Your cart is empty.</p>
+    {% endif %}
+   
+  </div>
+</body>
+</html>
